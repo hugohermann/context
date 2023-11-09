@@ -5,30 +5,33 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import Counter from "../components/Counter";
 import { CounterContext } from "../context/CounterContext";
 
-const Home = ({navigation}) => {
-  
+const Home = ({ navigation }) => {
   const { counter, setCounter } = useContext(CounterContext);
 
   return (
     <View style={styles.container}>
-
       <View style={styles.container}>
         <Text style={styles.text}>Home</Text>
 
         <Counter counter={counter} />
+
         <View style={styles.buttonRow}>
-          <Button
-            style={{ width: 200 }}
-            icon={<Icon name="minus" color="lightgrey" size={50} />}
-            type="clear"
-            onPress={() => setCounter(counter - 1)}
-          />
-          <Button
-            style={{ width: 200 }}
-            icon={<Icon name="plus" color="lightgrey" size={50} />}
-            type="clear"
-            onPress={() => setCounter(counter + 1)}
-          />
+          <View style={[{ width: 200 }]}>
+            <Button
+              //style={{ width: 200 }}
+              icon={<Icon name="minus" color="lightgrey" size={50} />}
+              type="clear"
+              onPress={() => setCounter(counter - 1)}
+            />
+          </View>
+          <View style={[{ width: 200 }]}>
+            <Button
+              //style={{ width: 200 }}
+              icon={<Icon name="plus" color="lightgrey" size={50} />}
+              type="clear"
+              onPress={() => setCounter(counter + 1)}
+            />
+          </View>
         </View>
 
         <Button
@@ -42,7 +45,6 @@ const Home = ({navigation}) => {
       <View style={styles.footer}>
         <Text style={{ ...styles.footeritem, marginTop: +60 }}>Footer</Text>
       </View>
-
     </View>
   );
 };

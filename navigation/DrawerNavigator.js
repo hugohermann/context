@@ -7,18 +7,10 @@ import Liste from '../screens/Liste';
 
 const Drawer = createDrawerNavigator();
 
-const screenOptions = {
-  headerStyle: {
-    backgroundColor: '#4488d6',
-  },
-  itemStyle: { padding: 0 },
-  headerTitleAlign: 'center', // fuer Android
-  headerTintColor: 'white'
-}
-
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
+        useLegacyImplementation
         initialRouteName='Home'
         backBehavior='initialRoute'
         screenOptions={screenOptions}
@@ -38,5 +30,14 @@ const DrawerNavigator = () => {
     </Drawer.Navigator>
   );
 };
+
+const screenOptions = {
+  headerStyle: {
+    backgroundColor: '#4488d6',
+  },
+  itemStyle: { padding: 0 },
+  headerTitleAlign: 'center', // fuer Android
+  headerTintColor: 'white',
+}
 
 export default DrawerNavigator;
